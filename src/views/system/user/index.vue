@@ -99,7 +99,7 @@
                 <DictLabel v-model="scope.row.gender" code="gender" />
               </template>
             </el-table-column>
-            <el-table-column label="部门" width="120" align="center" prop="deptName" />
+            <el-table-column label="部门" width="120" align="center" prop="dept_name" />
             <el-table-column label="手机号码" align="center" prop="mobile" width="120" />
             <el-table-column label="邮箱" align="center" prop="email" width="160" />
             <el-table-column label="状态" align="center" prop="status" width="80">
@@ -109,7 +109,7 @@
                 </el-tag>
               </template>
             </el-table-column>
-            <el-table-column label="创建时间" align="center" prop="createTime" width="150" />
+            <el-table-column label="创建时间" align="center" prop="created_at" width="150" />
             <el-table-column label="操作" fixed="right" width="220">
               <template #default="scope">
                 <el-button
@@ -180,7 +180,7 @@
 
         <el-form-item label="所属部门" prop="deptId">
           <el-tree-select
-            v-model="formData.deptId"
+            v-model="formData.dept_id"
             placeholder="请选择所属部门"
             :data="deptOptions"
             filterable
@@ -194,7 +194,7 @@
         </el-form-item>
 
         <el-form-item label="角色" prop="roleIds">
-          <el-select v-model="formData.roleIds" multiple placeholder="请选择">
+          <el-select v-model="formData.roles_ids" multiple placeholder="请选择">
             <el-option
               v-for="item in roleOptions"
               :key="item.value"

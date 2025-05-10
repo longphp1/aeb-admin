@@ -92,7 +92,7 @@ const UserAPI = {
     });
   },
 
-  /** 
+  /**
    * 下载用户导入模板
    * @returns {Promise} 模板文件
    */
@@ -138,7 +138,7 @@ const UserAPI = {
     });
   },
 
-  /** 
+  /**
    * 获取个人中心用户信息
    * @returns {Promise} 用户信息
    */
@@ -149,7 +149,7 @@ const UserAPI = {
     });
   },
 
-  /** 
+  /**
    * 修改个人中心用户信息
    * @param {Object} data 用户信息
    * @returns {Promise} 修改结果
@@ -162,7 +162,7 @@ const UserAPI = {
     });
   },
 
-  /** 
+  /**
    * 修改个人中心用户密码
    * @param {Object} data 密码信息
    * @returns {Promise} 修改结果
@@ -175,7 +175,7 @@ const UserAPI = {
     });
   },
 
-  /** 
+  /**
    * 发送短信验证码（绑定或更换手机号）
    * @param {string} mobile 手机号
    * @returns {Promise} 发送结果
@@ -188,7 +188,7 @@ const UserAPI = {
     });
   },
 
-  /** 
+  /**
    * 绑定或更换手机号
    * @param {Object} data 手机号信息
    * @returns {Promise} 绑定结果
@@ -201,7 +201,7 @@ const UserAPI = {
     });
   },
 
-  /** 
+  /**
    * 发送邮箱验证码（绑定或更换邮箱）
    * @param {string} email 邮箱
    * @returns {Promise} 发送结果
@@ -214,7 +214,7 @@ const UserAPI = {
     });
   },
 
-  /** 
+  /**
    * 绑定或更换邮箱
    * @param {Object} data 邮箱信息
    * @returns {Promise} 绑定结果
@@ -227,7 +227,7 @@ const UserAPI = {
     });
   },
 
-  /** 
+  /**
    * 获取用户选项列表
    * @returns {Promise} 用户选项列表
    */
