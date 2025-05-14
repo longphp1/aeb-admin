@@ -62,8 +62,8 @@
             <el-tag v-if="scope.row.type === MenuTypeEnum.EXTLINK" type="info">外链</el-tag>
           </template>
         </el-table-column>
-        <el-table-column label="路由名称" align="left" width="150" prop="routeName" />
-        <el-table-column label="路由路径" align="left" width="150" prop="routePath" />
+        <el-table-column label="路由名称" align="left" width="150" prop="name" />
+        <el-table-column label="路由路径" align="left" width="150" prop="route_path" />
         <el-table-column label="组件路径" align="left" width="250" prop="component" />
         <el-table-column label="权限标识" align="center" width="200" prop="perm" />
         <el-table-column label="状态" align="center" width="80">
@@ -469,6 +469,7 @@ function handleSubmit() {
           ElMessage.error("父级菜单不能为当前菜单");
           return;
         }
+        console.log(formData.value);
         MenuAPI.update(menuId, formData.value).then(() => {
           ElMessage.success("修改成功");
           handleCloseDialog();

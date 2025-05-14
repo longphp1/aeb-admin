@@ -83,7 +83,7 @@
       <pagination
         v-if="total > 0"
         v-model:total="total"
-        v-model:page="queryParams.pageNum"
+        v-model:page="queryParams.page"
         v-model:limit="queryParams.pageSize"
         @pagination="handleQuery"
       />
@@ -225,7 +225,7 @@ const ids = ref([]);
 const total = ref(0);
 
 const queryParams = reactive({
-  pageNum: 1,
+  page: 1,
   pageSize: 10,
 });
 
@@ -280,7 +280,7 @@ function handleQuery() {
 // 重置查询
 function handleResetQuery() {
   queryFormRef.value.resetFields();
-  queryParams.pageNum = 1;
+  queryParams.page = 1;
   handleQuery();
 }
 
@@ -386,7 +386,9 @@ async function handleOpenAssignPermDialog(row) {
     RoleAPI.getRoleMenuIds(roleId)
       .then((data) => {
         const checkedMenuIds = data;
-        checkedMenuIds.forEach((menuId) => permTreeRef.value.setChecked(menuId, true, false));
+        if (JSON.stringify(checkedMenuIds) !== "{}") {
+          checkedMenuIds.forEach((menuId) => permTreeRef.value.setChecked(menuId, true, false));
+        }
       })
       .finally(() => {
         loading.value = false;

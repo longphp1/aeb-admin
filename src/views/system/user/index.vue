@@ -149,7 +149,7 @@
           <pagination
             v-if="total > 0"
             v-model:total="total"
-            v-model:page="queryParams.pageNum"
+            v-model:page="queryParams.page"
             v-model:limit="queryParams.pageSize"
             @pagination="handleQuery"
           />
@@ -180,7 +180,7 @@
 
         <el-form-item label="所属部门" prop="deptId">
           <el-tree-select
-            v-model="formData.dept_id"
+            v-model="formData.deptId"
             placeholder="请选择所属部门"
             :data="deptOptions"
             filterable
@@ -194,7 +194,7 @@
         </el-form-item>
 
         <el-form-item label="角色" prop="roleIds">
-          <el-select v-model="formData.roles_ids" multiple placeholder="请选择">
+          <el-select v-model="formData.roleIds" multiple placeholder="请选择">
             <el-option
               v-for="item in roleOptions"
               :key="item.value"
@@ -259,7 +259,7 @@ const queryFormRef = ref();
 const userFormRef = ref();
 
 const queryParams = reactive({
-  pageNum: 1,
+  page: 1,
   pageSize: 10,
 });
 
@@ -323,7 +323,7 @@ async function handleQuery() {
 // 重置查询
 function handleResetQuery() {
   queryFormRef.value.resetFields();
-  queryParams.pageNum = 1;
+  queryParams.page = 1;
   queryParams.deptId = undefined;
   queryParams.createTime = undefined;
   handleQuery();
@@ -455,10 +455,12 @@ function handleOpenImportDialog() {
 function handleExport() {
   UserAPI.export(queryParams).then((response) => {
     const fileData = response.data;
-    const fileName = decodeURI(response.headers["content-disposition"].split(";")[1].split("=")[1]);
+    const matchFileName = decodeURI(
+      response.headers["content-disposition"].split(";")[1].split("=")[1]
+    );
+    const fileName = matchFileName.replace(/^['"]+|['"]+$/g, "");
     const fileType =
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8";
-
     const blob = new Blob([fileData], { type: fileType });
     const downloadUrl = window.URL.createObjectURL(blob);
 
