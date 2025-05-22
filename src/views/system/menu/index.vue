@@ -11,8 +11,10 @@
           />
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" icon="search" @click="handleQuery">搜索</el-button>
-          <el-button icon="refresh" @click="handleResetQuery">重置</el-button>
+          <el-button type="primary" icon="search" @click="handleQuery">
+            {{ $t("btn.search") }}
+          </el-button>
+          <el-button icon="refresh" @click="handleResetQuery">{{ $t("btn.reset") }}</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -25,7 +27,7 @@
           icon="plus"
           @click="handleOpenDialog('0')"
         >
-          新增
+          {{ $t("btn.add") }}
         </el-button>
       </div>
 
@@ -84,7 +86,7 @@
               icon="plus"
               @click.stop="handleOpenDialog(scope.row.id)"
             >
-              新增
+              {{ $t("btn.add") }}
             </el-button>
 
             <el-button
@@ -95,7 +97,7 @@
               icon="edit"
               @click.stop="handleOpenDialog(undefined, scope.row.id)"
             >
-              编辑
+              {{ $t("btn.edit") }}
             </el-button>
             <el-button
               v-hasPerm="['sys:menu:delete']"
@@ -105,7 +107,7 @@
               icon="delete"
               @click.stop="handleDelete(scope.row.id)"
             >
-              删除
+              {{ $t("btn.delete") }}
             </el-button>
           </template>
         </el-table-column>
@@ -132,6 +134,10 @@
 
         <el-form-item label="菜单名称" prop="name">
           <el-input v-model="formData.name" placeholder="请输入菜单名称" />
+        </el-form-item>
+
+        <el-form-item label="菜单名称EN" prop="name_en">
+          <el-input v-model="formData.name_en" placeholder="请输入菜单名称" />
         </el-form-item>
 
         <el-form-item label="菜单类型" prop="type">
@@ -325,8 +331,8 @@
 
       <template #footer>
         <div class="dialog-footer">
-          <el-button type="primary" @click="handleSubmit">确 定</el-button>
-          <el-button @click="handleCloseDialog">取 消</el-button>
+          <el-button type="primary" @click="handleSubmit">{{ $t("btn.sure") }}</el-button>
+          <el-button @click="handleCloseDialog">{{ $t("btn.cancel") }}</el-button>
         </div>
       </template>
     </el-drawer>
@@ -380,6 +386,7 @@ const formData = ref({ ...initialMenuFormData.value });
 const rules = reactive({
   parentId: [{ required: true, message: "请选择父级菜单", trigger: "blur" }],
   name: [{ required: true, message: "请输入菜单名称", trigger: "blur" }],
+  name_en: [{ required: true, message: "请输入英文菜单名称", trigger: "blur" }],
   type: [{ required: true, message: "请选择菜单类型", trigger: "blur" }],
   routeName: [{ required: true, message: "请输入路由名称", trigger: "blur" }],
   routePath: [{ required: true, message: "请输入路由路径", trigger: "blur" }],

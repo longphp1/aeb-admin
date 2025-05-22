@@ -12,8 +12,10 @@
           />
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" icon="search" @click="handleQuery">搜索</el-button>
-          <el-button icon="refresh" @click="handleResetQuery">重置</el-button>
+          <el-button type="primary" icon="search" @click="handleQuery">
+            {{ $t("btn.search") }}
+          </el-button>
+          <el-button icon="refresh" @click="handleResetQuery">{{ $t("btn.reset") }}</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -26,7 +28,7 @@
           icon="plus"
           @click="handleOpenDialog()"
         >
-          新增
+          {{ $t("btn.add") }}
         </el-button>
         <el-button
           v-hasPerm="['sys:config:refresh']"
@@ -34,7 +36,7 @@
           icon="RefreshLeft"
           @click="handleRefreshCache"
         >
-          刷新缓存
+          {{ $t("btn.refreshCache") }}
         </el-button>
       </div>
 
@@ -60,7 +62,7 @@
               icon="edit"
               @click="handleOpenDialog(scope.row.id)"
             >
-              编辑
+              {{ $t("btn.edit") }}
             </el-button>
             <el-button
               v-hasPerm="['sys:config:delete']"
@@ -70,7 +72,7 @@
               icon="delete"
               @click="handleDelete(scope.row.id)"
             >
-              删除
+              {{ $t("btn.delete") }}
             </el-button>
           </template>
         </el-table-column>
@@ -121,8 +123,8 @@
       </el-form>
       <template #footer>
         <div class="dialog-footer">
-          <el-button type="primary" @click="handleSubmit">确定</el-button>
-          <el-button @click="handleCloseDialog">取消</el-button>
+          <el-button type="primary" @click="handleSubmit">{{ $t("btn.sure") }}</el-button>
+          <el-button @click="handleCloseDialog">{{ $t("btn.cancel") }}</el-button>
         </div>
       </template>
     </el-dialog>

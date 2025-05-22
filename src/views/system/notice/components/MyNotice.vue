@@ -15,13 +15,13 @@
             <template #icon>
               <Search />
             </template>
-            搜索
+            {{ $t("btn.search") }}
           </el-button>
           <el-button @click="handleResetQuery()">
             <template #icon>
               <Refresh />
             </template>
-            重置
+            {{ $t("btn.reset") }}
           </el-button>
         </el-form-item>
       </el-form>
@@ -60,7 +60,7 @@
         <el-table-column align="center" fixed="right" label="操作" width="80">
           <template #default="scope">
             <el-button type="primary" size="small" link @click="handleReadNotice(scope.row.id)">
-              查看
+              {{ $t("btn.check") }}
             </el-button>
           </template>
         </el-table-column>

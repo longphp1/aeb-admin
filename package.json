@@ -1,6 +1,6 @@
 {
-  "name": "vue3-element-admin-js",
-  "description": "Vue3 + Vite + JavaScript + Element-Plus 的后台管理模板，vue3-element-admin 的 JavaScript 版本",
+  "name": "AEB Clearance",
+  "description": "为清关提供高效、准确、高速的数据验证",
   "version": "0.0.1",
   "private": true,
   "type": "module",

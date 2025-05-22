@@ -12,17 +12,21 @@
           />
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" icon="search" @click="handleQuery()">搜索</el-button>
-          <el-button icon="refresh" @click="handleResetQuery()">重置</el-button>
+          <el-button type="primary" icon="search" @click="handleQuery()">
+            {{ $t("btn.search") }}
+          </el-button>
+          <el-button icon="refresh" @click="handleResetQuery()">{{ $t("btn.reset") }}</el-button>
         </el-form-item>
       </el-form>
     </div>
 
     <el-card shadow="never">
       <div class="mb-[10px]">
-        <el-button type="success" icon="plus" @click="handleOpenDialog()">新增</el-button>
+        <el-button type="success" icon="plus" @click="handleOpenDialog()">
+          {{ $t("btn.add") }}
+        </el-button>
         <el-button type="danger" :disabled="ids.length === 0" icon="delete" @click="handleDelete()">
-          删除
+          {{ $t("btn.delete") }}
         </el-button>
       </div>
 
@@ -54,7 +58,7 @@
               icon="edit"
               @click.stop="handleOpenDialog(scope.row)"
             >
-              编辑
+              {{ $t("btn.edit") }}
             </el-button>
             <el-button
               type="danger"
@@ -63,7 +67,7 @@
               icon="delete"
               @click.stop="handleDelete(scope.row.id)"
             >
-              删除
+              {{ $t("btn.delete") }}
             </el-button>
           </template>
         </el-table-column>
@@ -120,8 +124,8 @@
 
       <template #footer>
         <div class="dialog-footer">
-          <el-button type="primary" @click="handleSubmitClick">确 定</el-button>
-          <el-button @click="handleCloseDialog">取 消</el-button>
+          <el-button type="primary" @click="handleSubmitClick">{{ $t("btn.sure") }}</el-button>
+          <el-button @click="handleCloseDialog">{{ $t("btn.cancel") }}</el-button>
         </div>
       </template>
     </el-dialog>

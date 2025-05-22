@@ -63,7 +63,7 @@
             </el-descriptions-item>
             <el-descriptions-item label="手机号码">
               {{ userProfile.mobile || "未绑定" }}
-              <el-button
+              <!--              <el-button
                 v-if="userProfile.mobile"
                 type="primary"
                 link
@@ -78,11 +78,11 @@
                 @click="() => handleOpenDialog(DialogType.MOBILE)"
               >
                 绑定
-              </el-button>
+              </el-button>-->
             </el-descriptions-item>
             <el-descriptions-item label="邮箱">
               {{ userProfile.email || "未绑定" }}
-              <el-button
+              <!--              <el-button
                 v-if="userProfile.email"
                 type="primary"
                 link
@@ -97,7 +97,7 @@
                 @click="() => handleOpenDialog(DialogType.EMAIL)"
               >
                 绑定
-              </el-button>
+              </el-button>-->
             </el-descriptions-item>
             <el-descriptions-item label="部门">
               {{ userProfile.deptName }}
@@ -173,15 +173,6 @@
       >
         <el-form-item label="手机号码" prop="mobile">
           <el-input v-model="mobileUpdateForm.mobile" style="width: 250px" />
-        </el-form-item>
-        <el-form-item label="验证码" prop="code">
-          <el-input v-model="mobileUpdateForm.code" style="width: 250px">
-            <template #append>
-              <el-button :disabled="mobileCountdown > 0" @click="handleSendMobileCode">
-                {{ mobileCountdown > 0 ? `${mobileCountdown}s后重新发送` : "发送验证码" }}
-              </el-button>
-            </template>
-          </el-input>
         </el-form-item>
       </el-form>
 

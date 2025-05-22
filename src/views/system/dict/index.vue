@@ -12,17 +12,21 @@
           />
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" icon="search" @click="handleQuery()">搜索</el-button>
-          <el-button icon="refresh" @click="handleResetQuery()">重置</el-button>
+          <el-button type="primary" icon="search" @click="handleQuery()">
+            {{ $t("btn.search") }}
+          </el-button>
+          <el-button icon="refresh" @click="handleResetQuery()">{{ $t("btn.reset") }}</el-button>
         </el-form-item>
       </el-form>
     </div>
 
     <el-card shadow="never">
       <div class="mb-[10px]">
-        <el-button type="success" icon="plus" @click="handleAddClick()">新增</el-button>
+        <el-button type="success" icon="plus" @click="handleAddClick()">
+          {{ $t("btn.add") }}
+        </el-button>
         <el-button type="danger" :disabled="ids.length === 0" icon="delete" @click="handleDelete()">
-          删除
+          {{ $t("btn.delete") }}
         </el-button>
       </div>
 
@@ -49,7 +53,7 @@
               <template #icon>
                 <Collection />
               </template>
-              字典数据
+              {{ $t("btn.dictData") }}
             </el-button>
 
             <el-button
@@ -59,7 +63,7 @@
               icon="edit"
               @click.stop="handleEditClick(scope.row.id)"
             >
-              编辑
+              {{ $t("btn.edit") }}
             </el-button>
             <el-button
               type="danger"
@@ -68,7 +72,7 @@
               icon="delete"
               @click.stop="handleDelete(scope.row.id)"
             >
-              删除
+              {{ $t("btn.delete") }}
             </el-button>
           </template>
         </el-table-column>
@@ -115,8 +119,8 @@
 
       <template #footer>
         <div class="dialog-footer">
-          <el-button type="primary" @click="handleSubmitClick">确 定</el-button>
-          <el-button @click="handleCloseDialog">取 消</el-button>
+          <el-button type="primary" @click="handleSubmitClick">{{ $t("btn.sure") }}</el-button>
+          <el-button @click="handleCloseDialog">{{ $t("btn.cancel") }}</el-button>
         </div>
       </template>
     </el-dialog>

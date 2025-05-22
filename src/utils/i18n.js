@@ -9,4 +9,4 @@ export function translateRouteTitle(title) {
     return translatedTitle;
   }
   return title;
-} 
+}

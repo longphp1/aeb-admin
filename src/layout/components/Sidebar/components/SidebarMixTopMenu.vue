@@ -29,7 +29,7 @@
             </el-icon>
             <div v-else :class="`i-svg:${route.meta.icon}`" />
           </template>
-          <span v-if="route.path === '/'">首页</span>
+          <span v-if="route.path === '/'">{{ $t("route.dashboard") }}</span>
           <span v-else-if="route.meta && route.meta.title" class="ml-1">
             {{ translateRouteTitle(route.meta.title) }}
           </span>

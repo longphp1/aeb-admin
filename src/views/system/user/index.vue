@@ -47,8 +47,10 @@
             </el-form-item>
 
             <el-form-item>
-              <el-button type="primary" icon="search" @click="handleQuery">搜索</el-button>
-              <el-button icon="refresh" @click="handleResetQuery">重置</el-button>
+              <el-button type="primary" icon="search" @click="handleQuery">
+                {{ $t("btn.search") }}
+              </el-button>
+              <el-button icon="refresh" @click="handleResetQuery">{{ $t("btn.reset") }}</el-button>
             </el-form-item>
           </el-form>
         </div>
@@ -62,7 +64,7 @@
                 icon="plus"
                 @click="handleOpenDialog()"
               >
-                新增
+                {{ $t("btn.add") }}
               </el-button>
               <el-button
                 v-hasPerm="'sys:user:delete'"
@@ -71,7 +73,7 @@
                 :disabled="selectIds.length === 0"
                 @click="handleDelete()"
               >
-                删除
+                {{ $t("btn.delete") }}
               </el-button>
             </div>
             <div>
@@ -80,11 +82,11 @@
                 icon="upload"
                 @click="handleOpenImportDialog"
               >
-                导入
+                {{ $t("btn.import") }}
               </el-button>
 
               <el-button v-hasPerm="'sys:user:export'" icon="download" @click="handleExport">
-                导出
+                {{ $t("btn.export") }}
               </el-button>
             </div>
           </div>
@@ -226,8 +228,8 @@
 
       <template #footer>
         <div class="dialog-footer">
-          <el-button type="primary" @click="handleSubmit">确 定</el-button>
-          <el-button @click="handleCloseDialog">取 消</el-button>
+          <el-button type="primary" @click="handleSubmit">{{ $t("btn.sure") }}</el-button>
+          <el-button @click="handleCloseDialog">{{ $t("btn.cancel") }}</el-button>
         </div>
       </template>
     </el-drawer>

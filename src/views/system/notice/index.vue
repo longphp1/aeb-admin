@@ -23,8 +23,10 @@
           </el-select>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" icon="search" @click="handleQuery()">搜索</el-button>
-          <el-button icon="refresh" @click="handleResetQuery()">重置</el-button>
+          <el-button type="primary" icon="search" @click="handleQuery()">
+            {{ $t("btn.search") }}
+          </el-button>
+          <el-button icon="refresh" @click="handleResetQuery()">{{ $t("btn.reset") }}</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -37,7 +39,7 @@
           icon="plus"
           @click="handleOpenDialog()"
         >
-          新增通知
+          {{ $t("btn.add") }}
         </el-button>
         <el-button
           v-hasPerm="['sys:notice:delete']"
@@ -46,7 +48,7 @@
           icon="delete"
           @click="handleDelete()"
         >
-          删除
+          {{ $t("btn.delete") }}
         </el-button>
       </template>
 
@@ -104,7 +106,7 @@
         <el-table-column align="center" fixed="right" label="操作" width="150">
           <template #default="scope">
             <el-button type="primary" size="small" link @click="openDetailDialog(scope.row.id)">
-              查看
+              {{ $t("btn.check") }}
             </el-button>
             <el-button
               v-if="scope.row.publishStatus != 1"
@@ -114,7 +116,7 @@
               link
               @click="handlePublish(scope.row.id)"
             >
-              发布
+              {{ $t("btn.publish") }}
             </el-button>
             <el-button
               v-if="scope.row.publishStatus == 1"
@@ -124,7 +126,7 @@
               link
               @click="handleRevoke(scope.row.id)"
             >
-              撤回
+              {{ $t("btn.revoke") }}
             </el-button>
             <el-button
               v-if="scope.row.publishStatus != 1"
@@ -134,7 +136,7 @@
               link
               @click="handleOpenDialog(scope.row.id)"
             >
-              编辑
+              {{ $t("btn.edit") }}
             </el-button>
             <el-button
               v-if="scope.row.publishStatus != 1"
@@ -144,7 +146,7 @@
               link
               @click="handleDelete(scope.row.id)"
             >
-              删除
+              {{ $t("btn.delete") }}
             </el-button>
           </template>
         </el-table-column>
@@ -200,8 +202,8 @@
       </el-form>
       <template #footer>
         <div class="dialog-footer">
-          <el-button type="primary" @click="handleSubmit()">确定</el-button>
-          <el-button @click="handleCloseDialog()">取消</el-button>
+          <el-button type="primary" @click="handleSubmit()">{{ $t("btn.sure") }}</el-button>
+          <el-button @click="handleCloseDialog()">{{ $t("btn.cancel") }}</el-button>
         </div>
       </template>
     </el-dialog>
