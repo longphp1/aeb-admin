@@ -11,17 +11,11 @@ export const useSettingsStore = defineStore("setting", () => {
   // 侧边栏 Logo
   const sidebarLogo = useStorage("sidebarLogo", defaultSettings.sidebarLogo);
   // 侧边栏配色方案 (经典蓝/极简白)
-  const sidebarColorScheme = useStorage(
-    "sidebarColorScheme",
-    defaultSettings.sidebarColorScheme
-  );
+  const sidebarColorScheme = useStorage("sidebarColorScheme", defaultSettings.sidebarColorScheme);
   // 布局
   const layout = useStorage("layout", defaultSettings.layout);
   // 水印
-  const watermarkEnabled = useStorage(
-    "watermarkEnabled",
-    defaultSettings.watermarkEnabled
-  );
+  const watermarkEnabled = useStorage("watermarkEnabled", defaultSettings.watermarkEnabled);
 
   // 主题
   const themeColor = useStorage("themeColor", defaultSettings.themeColor);
@@ -92,4 +86,4 @@ export const useSettingsStore = defineStore("setting", () => {
     changeLayout,
     changeSidebarColor,
   };
-}); 
+});

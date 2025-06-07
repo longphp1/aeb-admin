@@ -96,10 +96,7 @@ const navigateToFirstLeftMenu = (menus) => {
   } else if (firstMenu.name) {
     router.push({
       name: firstMenu.name,
-      query:
-        typeof firstMenu.meta?.params === "object"
-          ? firstMenu.meta.params
-          : undefined,
+      query: typeof firstMenu.meta?.params === "object" ? firstMenu.meta.params : undefined,
     });
   }
 };

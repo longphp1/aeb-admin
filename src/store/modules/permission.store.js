@@ -107,4 +107,4 @@ const parseDynamicRoutes = (rawRoutes) => {
  */
 export function usePermissionStoreHook() {
   return usePermissionStore(store);
-} 
+}

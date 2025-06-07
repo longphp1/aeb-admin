@@ -13,14 +13,14 @@ export const hasPerm = {
         "需要提供权限标识！例如：v-has-perm=\"'sys:user:add'\" 或 v-has-perm=\"['sys:user:add', 'sys:user:edit']\""
       );
     }
-
+    console.log(requiredPerms);
     const { roles, perms } = useUserStore().userInfo;
 
     // 超级管理员拥有所有权限
     if (roles.includes("ROOT")) {
       return;
     }
-
+    console.log(perms);
     // 检查权限
     const hasAuth = Array.isArray(requiredPerms)
       ? requiredPerms.some((perm) => perms.includes(perm))
@@ -59,4 +59,4 @@ export const hasRole = {
       el.parentNode.removeChild(el);
     }
   },
-}; 
+};

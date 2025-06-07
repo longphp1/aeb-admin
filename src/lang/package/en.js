@@ -83,6 +83,7 @@ export default {
     测试菜单: "TEST MENU",
     新增: "Add",
     测试链接: "test Link",
+    个人中心: "User Profile",
   },
   // 登录页面国际化
   login: {

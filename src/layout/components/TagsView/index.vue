@@ -288,11 +288,11 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .tags-container {
-  height: 34px;
   width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #d8dce5;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+  height: 34px;
+  background-color: var(--el-bg-color);
+  border: 1px solid var(--el-border-color-light);
+  box-shadow: 0 1px 1px var(--el-box-shadow-light);
 
   .scroll-container {
     position: relative;
@@ -315,9 +315,9 @@ onMounted(() => {
     position: relative;
     height: 26px;
     line-height: 26px;
-    border: 1px solid #d8dce5;
-    color: #495060;
-    background: #fff;
+    color: var(--el-text-color-primary);
+    background: var(--el-bg-color);
+    border: 1px solid var(--el-border-color);
     padding: 0 8px;
     font-size: 12px;
     margin-left: 5px;

@@ -1,7 +1,6 @@
 <template>
   <div class="dashboard-container">
     <!-- github 角标 -->
-    <github-corner class="github-corner" />
 
     <el-card shadow="never" class="mt-2">
       <el-row class="h-80px">
